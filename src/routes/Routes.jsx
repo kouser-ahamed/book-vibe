@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Homepage from "../pages/homepage/Homepage";
 import Books from "../pages/books/Books";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
       },
      
     ],
-    errorElement: <div>404 Not Found</div>,
+    errorElement: <ErrorPage> </ErrorPage>
 
   },
 ]);
