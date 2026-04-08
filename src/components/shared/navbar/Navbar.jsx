@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, Links, NavLink } from 'react-router';
 
 const Navbar = () => {
 
   const links = <>
+
+
+
   
-    <li><Link to="/">Home</Link></li>
-    <li><Link to="/books">Listed Books</Link></li>
-    <li><Link to="/page-to-read">Page to Read</Link></li>
+    <li><NavLink to={"/"} className={({isActive})=> `font-semibold mr-1 ${isActive ? " text-green-500 border border-green-500" : ""}`}>Home</NavLink></li>
+    <li><NavLink to={"/books"} className={({isActive})=> `font-semibold mr-1 ${isActive ? " text-green-500 border border-green-500" : ""}`}>Listed Books</NavLink></li>
+    <li><NavLink to={"/page-to-read"} className={({isActive})=> `font-semibold mr-1 ${isActive ? " text-green-500 border border-green-500" : ""}`}>Page to Read</NavLink></li>
 
   </>
 
@@ -31,8 +34,9 @@ const Navbar = () => {
           {links}
         </ul>
       </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+      <div className="navbar-end gap-3">
+        <button className="btn btn-success text-white">Signin</button>
+        <button className="btn btn-accent text-white">Signup</button>
       </div>
     </div>
   );
